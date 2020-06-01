@@ -1,0 +1,59 @@
+
+# 克隆远程代码：
+git clone  https://zhaopengfei2018:Qq10606277@github.com/zhaopengfei2018/private_zhzw.git
+
+# 添加到缓存区
+git add .
+
+# 提交暂存区到本地仓库区
+ 
+$ git commit -m [message]
+
+#如果出现提交问题在config 添加 
+[user]
+    name = zhaopengfei2018
+    email = 10606277@qq.com
+	
+#提交到远程仓库
+
+git push -u origin master 	
+
+# 拉取远程文件
+git pull
+
+git 在pull或者合并分支的时候有时会遇到这个界面。可以不管(直接下面3,4步)，如果要输入解释的话就需要:
+
+1.按键盘字母 i 进入insert模式
+
+2.修改最上面那行黄色合并信息,可以不修改
+
+3.按键盘左上角"Esc"
+
+4.输入":wq",注意是冒号+wq,按回车键即可
+
+
+Git GUi
+
+Rescan:重新扫描
+
+stage changed: 更改的内容
+
+Sign Off:签名
+
+Commit:提交到本地仓库
+
+Push：提交到远程仓库
+
+//初始化本地
+
+1、git init
+
+2、git add src（这个src意思是添加src目录下的所有文件，有些会说add ..    那就是提交工程下的所有文件，在这我只拿src目录说明，这个时候如果输入 git status 就可以看到要提交的文件变成了黄色，前面还有一个new file）
+
+3、git commit -am "first commit"   (提交到本地仓库)
+
+4、git remote add origin XXX（XXX就是你github或者码云等远程仓库的地址，git branch这个命令可以看到你所在的分支）
+
+5、git pull （拉取远程分支信息）
+
+6、git push -u -f origin master(提交到远程仓库，这个命令中的 -f 是强制推送，因为远程仓库只有初始化的文件，所以强制推送上去就行了，不加-f 会报当前分支没有远程分支 新，强制推送可以覆盖master，这样就完成了第一次提交的步骤)
