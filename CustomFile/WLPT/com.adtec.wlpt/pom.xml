@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.adtec.wlpt</groupId>
+  <artifactId>com.adtec.wlpt</artifactId>
+  <version>${Project-version}</version>
+  <packaging>pom</packaging>
+  
+  <!-- module根据项目生成 -->
+  <modules>
+		<module>../com.adtec.wlpt.busi.swapb</module>
+		<module>../com.adtec.wlpt.busi.zhzw</module>
+		<module>../com.adtec.wlpt.comm.http_core_input</module>
+		<module>../com.adtec.wlpt</module>
+  </modules>
+  
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<Junit.version>4.11</Junit.version>
+		<starring-prefix>com.adtec.starring</starring-prefix>
+		<!-- JavaFrame-version从数据库中取  -->
+		<JavaFrame-version>6.0.0.3.RELEASE</JavaFrame-version>
+		<Project-version>1.0.0-SNAPSHOT</Project-version>
+	</properties>
+ 
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${Junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>2.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymockclassextension</artifactId>
+			<version>2.2.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		
+        <!-- StarringV6 配置 -->
+		<dependency>
+			<groupId>com.adtec.starring</groupId>
+			<artifactId>JavaFrame-core</artifactId>
+			<version>${JavaFrame-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.adtec.starring</groupId>
+			<artifactId>JavaFrame-simulate</artifactId>
+			<version>${JavaFrame-version}</version>
+		</dependency>
+	</dependencies>
+
+</project>
